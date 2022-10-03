@@ -1,30 +1,26 @@
 package com.hr.personnel;
 
+import gov.TaxPayer;
+
 import java.time.LocalDate;
 
-public class Employee {
+public abstract class Employee implements TaxPayer {
 
   private String name;
   private LocalDate hireDate;
-
-  public Employee() {
-  }
 
   public Employee(String name, LocalDate hireDate) {
     this.name = name;
     this.hireDate = hireDate;
   }
 
-
-
-  public String getEmployeeInfo() {
-    return "name = " + name +
-            ", hireDate = " + hireDate;
-  }
+  public abstract String getEmployeeInfo();
 
   public String work() {
-    return  name + " worked";
+    return name + " worked";
   }
+
+  public abstract double computeMonthlyCompensation();
 
   public String getName() {
     return name;
